@@ -1,4 +1,4 @@
 [general]
-version    =Veriton X4640G
+version    =Veriton X4640Gs
 messagenew =Veriton X4640G
 messageold =B450M MORTAR MAX (MS-7B89)
