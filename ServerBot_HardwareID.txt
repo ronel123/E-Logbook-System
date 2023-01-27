@@ -1,4 +1,4 @@
 [general]
-version    = B450M MORTAR MAX (MS-7B89)
+version    = Veriton X46406G
 messagenew = "Veriton X46406G"
 messageold = "B450M MORTAR MAX (MS-7B89)"
