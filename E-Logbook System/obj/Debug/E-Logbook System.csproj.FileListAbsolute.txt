@@ -1,0 +1,47 @@
+E:\Documents\Log-book System\Log-book System\bin\Debug\Log-book System.exe.config
+E:\Documents\Log-book System\Log-book System\bin\Debug\Log-book System.exe
+E:\Documents\Log-book System\Log-book System\bin\Debug\Log-book System.pdb
+E:\Documents\Log-book System\Log-book System\bin\Debug\BouncyCastle.Crypto.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\DocumentFormat.OpenXml.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\Google.Protobuf.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Compression.LZ4.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Hash.xxHash.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\MySql.Data.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\MySqlBackup.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Buffers.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Memory.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Numerics.Vectors.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\ZstdNet.dll
+E:\Documents\Log-book System\Log-book System\bin\Debug\BouncyCastle.Crypto.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\DocumentFormat.OpenXml.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\Google.Protobuf.pdb
+E:\Documents\Log-book System\Log-book System\bin\Debug\Google.Protobuf.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Compression.LZ4.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\K4os.Hash.xxHash.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\MySql.Data.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Buffers.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Memory.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Numerics.Vectors.xml
+E:\Documents\Log-book System\Log-book System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.AssemblyReference.cache
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.SuggestedBindingRedirects.cache
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.ResolveComReference.cache
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmAbout.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmChangeProfile.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmDashboard.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmForm137.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmHistoryOfFiles.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmHome.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmLogin.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmLoginVerification.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmRandomFiles.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.frmSplashScreen.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log_book_System.Properties.Resources.resources
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.GenerateResource.cache
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.CoreCompileInputs.cache
+E:\Documents\Log-book System\Log-book System\obj\Debug\E-Logbook System.csproj.CopyComplete
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log-book System.exe
+E:\Documents\Log-book System\Log-book System\obj\Debug\Log-book System.pdb
