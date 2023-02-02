@@ -37,6 +37,7 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bttnExportToExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvForm137 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,7 +58,6 @@
             this.cmbStoreData = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.bttnExportToExcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,6 +149,24 @@
             this.panel1.Size = new System.Drawing.Size(1115, 51);
             this.panel1.TabIndex = 72;
             // 
+            // bttnExportToExcel
+            // 
+            this.bttnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnExportToExcel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bttnExportToExcel.FlatAppearance.BorderSize = 0;
+            this.bttnExportToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnExportToExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnExportToExcel.Image = ((System.Drawing.Image)(resources.GetObject("bttnExportToExcel.Image")));
+            this.bttnExportToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bttnExportToExcel.Location = new System.Drawing.Point(952, 8);
+            this.bttnExportToExcel.Name = "bttnExportToExcel";
+            this.bttnExportToExcel.Size = new System.Drawing.Size(151, 38);
+            this.bttnExportToExcel.TabIndex = 65;
+            this.bttnExportToExcel.Text = " EXPO&RT TO EXCEL";
+            this.bttnExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bttnExportToExcel.UseVisualStyleBackColor = false;
+            this.bttnExportToExcel.Click += new System.EventHandler(this.bttnExportToExcel_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -187,10 +205,12 @@
             this.lvForm137.UseCompatibleStateImageBehavior = false;
             this.lvForm137.View = System.Windows.Forms.View.Details;
             this.lvForm137.DoubleClick += new System.EventHandler(this.lvForm137_DoubleClick);
+            this.lvForm137.Resize += new System.EventHandler(this.lvForm137_Resize);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "No.";
+            this.columnHeader1.Width = 85;
             // 
             // columnHeader2
             // 
@@ -210,7 +230,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Previous School";
-            this.columnHeader5.Width = 170;
+            this.columnHeader5.Width = 245;
             // 
             // columnHeader6
             // 
@@ -246,10 +266,12 @@
             this.lvRandomFiles.UseCompatibleStateImageBehavior = false;
             this.lvRandomFiles.View = System.Windows.Forms.View.Details;
             this.lvRandomFiles.DoubleClick += new System.EventHandler(this.lvRandomFiles_DoubleClick);
+            this.lvRandomFiles.Resize += new System.EventHandler(this.lvRandomFiles_Resize);
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "No.";
+            this.columnHeader7.Width = 85;
             // 
             // columnHeader8
             // 
@@ -269,7 +291,7 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "Remarks";
-            this.columnHeader11.Width = 170;
+            this.columnHeader11.Width = 245;
             // 
             // columnHeader12
             // 
@@ -320,24 +342,6 @@
             this.label4.TabIndex = 71;
             this.label4.Text = "Show data:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bttnExportToExcel
-            // 
-            this.bttnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttnExportToExcel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bttnExportToExcel.FlatAppearance.BorderSize = 0;
-            this.bttnExportToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnExportToExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnExportToExcel.Image = ((System.Drawing.Image)(resources.GetObject("bttnExportToExcel.Image")));
-            this.bttnExportToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttnExportToExcel.Location = new System.Drawing.Point(952, 8);
-            this.bttnExportToExcel.Name = "bttnExportToExcel";
-            this.bttnExportToExcel.Size = new System.Drawing.Size(151, 38);
-            this.bttnExportToExcel.TabIndex = 65;
-            this.bttnExportToExcel.Text = " EXPO&RT TO EXCEL";
-            this.bttnExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bttnExportToExcel.UseVisualStyleBackColor = false;
-            this.bttnExportToExcel.Click += new System.EventHandler(this.bttnExportToExcel_Click);
             // 
             // frmHistoryOfFiles
             // 

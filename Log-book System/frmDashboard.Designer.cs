@@ -173,7 +173,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(271, 31);
             this.lblName.TabIndex = 3;
-            this.lblName.Text = "Juan Dela Cruz";
+            this.lblName.Text = "Tagala, Ronel C";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
@@ -259,7 +259,7 @@
             this.btnRandomFiles.Size = new System.Drawing.Size(274, 55);
             this.btnRandomFiles.TabIndex = 2;
             this.btnRandomFiles.TabStop = false;
-            this.btnRandomFiles.Text = "             Random Files";
+            this.btnRandomFiles.Text = "             Random Documents";
             this.btnRandomFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRandomFiles.UseVisualStyleBackColor = true;
             this.btnRandomFiles.Click += new System.EventHandler(this.btnRandomFiles_Click);

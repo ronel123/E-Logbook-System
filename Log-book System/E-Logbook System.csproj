@@ -117,6 +117,12 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForgotPass.Designer.cs">
+      <DependentUpon>frmForgotPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForm137.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     <Compile Include="frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSystemLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemLogs.Designer.cs">
+      <DependentUpon>frmSystemLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAbout.resx">
@@ -169,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForgotPass.resx">
+      <DependentUpon>frmForgotPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForm137.resx">
       <DependentUpon>frmForm137.cs</DependentUpon>
@@ -190,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemLogs.resx">
+      <DependentUpon>frmSystemLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

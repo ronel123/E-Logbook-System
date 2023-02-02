@@ -42,16 +42,27 @@ namespace Log_book_System
 
                     settings.deleteForm137Data(Global.frmForm137id);
                     MessageBox.Show("Data form has been successfully deleted!", "E-Logbook System - Powered by: ITech Digital Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //System logs and actions records.
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Account Verification", "User's veriried account", "Success");
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("You just input a wrong password!", "Account Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Account Verification", "User's got wrong password", "Failed");
                 }
             }
             else
             {
                 MessageBox.Show("That account does not exists!", "Account Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Account Verification", "User's attempting to verified", "Failed");
             }
         }
 

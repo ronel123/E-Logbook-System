@@ -26,6 +26,9 @@ namespace Log_book_System
 
         private void frmHistoryOfFiles_Load(object sender, EventArgs e)
         {
+            SizeLastColumn(lvRandomFiles);
+            SizeLastColumn(lvForm137);
+
             frmHistoryOfFilesInstance = this;
            
             Dictionary<string, string> comboSource = new Dictionary<string, string>();
@@ -430,6 +433,21 @@ namespace Log_book_System
                 lvRandomFiles.Visible = false;
                 txtFiltername.Text = "";
             }
+        }
+
+        private void lvForm137_Resize(object sender, EventArgs e)
+        {
+            SizeLastColumn((System.Windows.Forms.ListView)sender);
+        }
+
+        private void lvRandomFiles_Resize(object sender, EventArgs e)
+        {
+            SizeLastColumn((System.Windows.Forms.ListView)sender);
+        }
+
+        private void SizeLastColumn(System.Windows.Forms.ListView lv)
+        {
+            lv.Columns[lv.Columns.Count - 1].Width = -2;
         }
     }
 }

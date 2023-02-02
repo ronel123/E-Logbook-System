@@ -35,6 +35,7 @@ namespace Log_book_System
             try
             {
                 cmbStatus.SelectedIndex = 0;
+                cmbGradeLevel.SelectedIndex = 0;    
                 /* Load the specific Account and update the input fields */
                 DataTable accountTable = new DataTable();
                 accountTable = accountObject.ReadForm137Data(Global.frmForm137id);
@@ -88,11 +89,19 @@ namespace Log_book_System
                         Settings settings = new Settings();
                         settings.inputDataForm137(txtFname.Text, txtMname.Text, txtLname.Text, cmbGradeLevel.Text, rtSchool.Text, cmbStatus.Text);
                         MessageBox.Show("Data form has been successfully submitted!", "Form 137/SF10 - Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //System logs and actions records.
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's add a new files with " + txtLname.Text + ", " + txtFname.Text + "", "Success");
+                        
                         resetField();
                     }
                     else
                     {
                         MessageBox.Show("An error occured during submitting of this data, Please try-again thank you.", "Form 137/SF10 - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        //System logs and actions records.
+                        Settings settings = new Settings();
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's add a new files with " + txtLname.Text + ", " + txtFname.Text + "", "Failed");
                     }
                 }
             }
@@ -103,11 +112,20 @@ namespace Log_book_System
                     Settings settings = new Settings();
                     settings.updateDataForm137(txtFname.Text, txtMname.Text, txtLname.Text, cmbGradeLevel.Text, rtSchool.Text, cmbStatus.Text, Global.frmForm137id, rtRemarks.Text);
                     MessageBox.Show("Data form has been successfully updated!", "Form 137/SF10 - Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //System logs and actions records.
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's updated a existing files with " + txtLname.Text + ", " + txtFname.Text + "", "Success");
+
                     this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("An error occured during updating of this data, Please try-again thank you.", "Form 137/SF10 - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's updateing a existing files with " + txtLname.Text + ", " + txtFname.Text + "", "Failed");
+
                 }
             }
         }
@@ -128,25 +146,42 @@ namespace Log_book_System
             {
                 frmLoginVerification frmLoginVerification = new frmLoginVerification();
                 frmLoginVerification.ShowDialog();
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's delete a existing files with " + txtLname.Text + ", " + txtFname.Text + "", "Success");
+
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("An error occured during deleting of this data, Please try-again thank you.", "Form 137/SF10 - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Form 137/SF10", "User's delete a existing files with " + txtLname.Text + ", " + txtFname.Text + "", "Failed");
             }
         }
 
         private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbStatus.SelectedIndex == 0)
+            if (btnSubmit.Text == "Submit")
             {
                 lblRemarks.Visible = false;
                 rtRemarks.Visible = false;
             }
-            else if(cmbStatus.SelectedIndex == 1)
+            else
             {
-                lblRemarks.Visible = true;
-                rtRemarks.Visible = true;
+                if (cmbStatus.SelectedIndex == 0)
+                {
+                    lblRemarks.Visible = false;
+                    rtRemarks.Visible = false;
+                }
+                else if (cmbStatus.SelectedIndex == 1)
+                {
+                    lblRemarks.Visible = true;
+                    rtRemarks.Visible = true;
+                }
             }
         }
 

@@ -111,8 +111,20 @@ namespace Log_book_System
 
         private void btnSystemLogs_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature was not yet added! Wait for the next update.", "Feature not available.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            btnSystemLogs.Enabled = false;
+            frmSystemLogs myForm = new frmSystemLogs();
+            myForm.TopLevel = false;
+            myForm.AutoScroll = true;
+            myForm.FormBorderStyle = FormBorderStyle.None;
+            myForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(myForm);
+
+            foreach (Control control in pnlForm.Controls)
+            {
+
+                if (control != myForm) { control.Hide(); }
+                else { control.Show(); control.Focus(); }
+
+            }
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

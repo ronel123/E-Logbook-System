@@ -66,17 +66,31 @@ namespace Log_book_System
                     {
                         userAccount.ChangeUserPassword(txtPass.Text);
                         MessageBox.Show("Your new password has been successfully updated!", "E-Logbook System - Change Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //System logs and actions records.
+                        Settings settings = new Settings();
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Change Password", "User's change password", "Success");
+
                         this.Close();
                     }
                     else
                     {
                         MessageBox.Show("An error occured during updating of this data, Please try-again thank you.", "E-Logbook System - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        //System logs and actions records.
+                        Settings settings = new Settings();
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Change Password", "User's cancel during changing password", "Failed");
+
                         this.Close();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Your user password doesn't match. Please try again.", "E-Logbook System - Change Password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Change Password", "User's changing password with not matched password", "Failed");
                 }
             }
         }

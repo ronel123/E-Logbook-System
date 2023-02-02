@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRandomFiles));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtRemarks = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rtRemarks = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Any Documents";
             // 
+            // rtRemarks
+            // 
+            this.rtRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.rtRemarks.Location = new System.Drawing.Point(39, 130);
+            this.rtRemarks.Multiline = true;
+            this.rtRemarks.Name = "rtRemarks";
+            this.rtRemarks.Size = new System.Drawing.Size(317, 86);
+            this.rtRemarks.TabIndex = 3;
+            this.rtRemarks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtRemarks_KeyPress_1);
+            // 
             // btnDel
             // 
             this.btnDel.Location = new System.Drawing.Point(377, 242);
@@ -78,11 +88,13 @@
             // 
             // cmbStatus
             // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbStatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Completed",
-            "Pending"});
+            "Pending",
+            "Submit"});
             this.cmbStatus.Location = new System.Drawing.Point(39, 242);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(138, 25);
@@ -166,16 +178,6 @@
             this.label1.Size = new System.Drawing.Size(159, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Type Of Document: *";
-            // 
-            // rtRemarks
-            // 
-            this.rtRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.rtRemarks.Location = new System.Drawing.Point(39, 130);
-            this.rtRemarks.Multiline = true;
-            this.rtRemarks.Name = "rtRemarks";
-            this.rtRemarks.Size = new System.Drawing.Size(317, 86);
-            this.rtRemarks.TabIndex = 3;
-            this.rtRemarks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtRemarks_KeyPress_1);
             // 
             // frmRandomFiles
             // 

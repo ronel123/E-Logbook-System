@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -76,7 +77,42 @@ namespace Log_book_System.Classes.Database
                 return affectedRows;
             return 0;
         }
-   
-        
+
+        public int ForgotPassword(string email_address, string password)
+        {
+            Global.MysqlCon.Open();
+            mysqlCmd.Parameters.Clear();
+
+            string tempStr = string.Format("UPDATE user_account SET password =@password WHERE email_address = @email_address");
+
+            mysqlCmd.CommandText = tempStr;
+            mysqlCmd.CommandType = CommandType.Text;
+            mysqlCmd.Connection = Global.MysqlCon;
+
+            mysqlCmd.Parameters.Add("@email_address", MySqlDbType.VarChar).Value = email_address;
+            mysqlCmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = password;
+
+            int affectedRows = mysqlCmd.ExecuteNonQuery();
+            Global.MysqlCon.Close();
+            if (affectedRows > 0)
+                return affectedRows;
+            return 0;
+        }
+        public DataTable ReadEmailAccount(string email)
+        {
+            Global.MysqlCon.Open();
+            mysqlCmd.Parameters.Clear(); // Clear the parameter this is to avoid exception error due to the parameter is being added.
+            //mysqlCmd.CommandText = "SELECT u.*, e.employee_id, (CASE WHEN ur.role_name IS null THEN \"None\" ELSE ur.role_name END) AS role FROM user_account u LEFT JOIN employee e ON e.user_id = u.user_id LEFT JOIN user_role ur ON u.user_role_id = ur.user_role_id WHERE email = @email";
+            mysqlCmd.CommandText = "SELECT email_address from user_account WHERE email_address = @email";
+            mysqlCmd.CommandType = CommandType.Text;
+            mysqlCmd.Connection = Global.MysqlCon;
+
+            mysqlCmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
+
+            accTable.Load(mysqlCmd.ExecuteReader());
+            Global.MysqlCon.Close();
+            return accTable;
+        }
+
     }
 }

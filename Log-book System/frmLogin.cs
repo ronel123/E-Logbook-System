@@ -38,8 +38,8 @@ namespace Log_book_System
 
         private void lblForgotPass_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature was not available right now. Check for next update. \n\nThank you.", "Creating new account", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtUsername.Focus();
+            frmForgotPass myForm = new frmForgotPass();
+            myForm.ShowDialog();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -88,16 +88,25 @@ namespace Log_book_System
                 if (getResultID.Equals(vals.FirstOrDefault().Value))
                 {
                     loginAcc();
+
                 }
                 else
                 {
                     MessageBox.Show("If you wish to use this system you need to contact system administrator.. \n\nContact Information:\nFacebook account: Ronel Tagala\nContact Number: 0948 063 8811\nEmail Address: roneltagala0@gmail.com\n\nThank you.", "Need Permission", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     //System.Windows.Forms.Application.Exit();
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Login Attempt", "Need to ask the administrator permission", "Failed");
                 }
             }
             catch
             {
                 MessageBox.Show("Try again later. Please check your internet connection, thank you.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Login Attempt", "User's slow or don't have Internet Connection", "Failed");
             }
 
         }
@@ -124,15 +133,27 @@ namespace Log_book_System
                     mainForm.lblRole.Text = "(" + accTable.Rows[0]["rolename"].ToString() + ")";
                     mainForm.Show();
                     this.Hide();
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Login Attempt", "Login successfully", "Success");
                 }
                 else
                 {
                     MessageBox.Show("You just input a wrong password!", "Account Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Login Attempt", "User's input a wrong password with correct username", "Failed");
                 }
             }
             else
             {
                 MessageBox.Show("That account does not exists!", "Account Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(0, "Login Attempt", "User's input a wrong password and username", "Failed");
             }
         }
 
@@ -202,18 +223,28 @@ namespace Log_book_System
                 int y = Top + (this.Height / 2) - 100;
 
                 string input = Interaction.InputBox("If you wish to use this system you need to contact system administrator.. \nContact Information:\nFacebook account: Ronel Tagala\nContact Number: 0948 063 8811\nEmail Address: roneltagala0@gmail.com\n\nThank you.", "Master Password", "", x, y);
-                
+
                 //string input = Interaction.InputBox(, "", 0, 0);
 
-                if(input.Equals("admin"))
+                if (input.Equals("ronelpogi031500.."))
                 {
-                    frmDashboard frmDashboard = new frmDashboard(); 
+                    frmDashboard frmDashboard = new frmDashboard();
                     frmDashboard.Show();
-                    this.Close();
+                    this.Hide();
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(0, "Login Attempt", "User's input with master password", "Success");
                 }
                 else
+                {
                     MessageBox.Show("Access Denied.", "Master Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(0, "Login Attempt", "User's input with master password", "Failed");
+                }                 
             }
-        }       
+        }
     }
 }

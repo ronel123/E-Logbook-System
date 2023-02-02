@@ -78,11 +78,19 @@ namespace Log_book_System
                         Settings settings = new Settings();
                         settings.inputRandomFiles(txtTypeOfDocs.Text, txtReceivedFrom.Text, rtRemarks.Text, cmbStatus.Text);
                         MessageBox.Show("Data form has been successfully submitted!", "Random Files - Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //System logs and actions records.
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's add a new files with " + txtReceivedFrom.Text + "", "Success");
+
                         resetField();
                     }
                     else
                     {
                         MessageBox.Show("An error occured during submitting of this data, Please try-again thank you.", "Random Files - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        //System logs and actions records.
+                        Settings settings = new Settings();
+                        settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's add a new files with " + txtReceivedFrom.Text + "", "Failed");
                     }
                 }
             }
@@ -93,11 +101,19 @@ namespace Log_book_System
                     Settings settings = new Settings();
                     settings.updateRandomFiles(txtTypeOfDocs.Text, txtReceivedFrom.Text, rtRemarks.Text, cmbStatus.Text, Global.frmRandomFilesid);
                     MessageBox.Show("Data form has been successfully updated!", "Random Files - Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //System logs and actions records.
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's update a existing files with " + txtReceivedFrom.Text + "", "Success");
+
                     this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("An error occured during updating of this data, Please try-again thank you.", "Form 137/SF10 - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    //System logs and actions records.
+                    Settings settings = new Settings();
+                    settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's update a existing files with " + txtReceivedFrom.Text + "", "Failed");
                 }
             }
         }
@@ -108,11 +124,20 @@ namespace Log_book_System
             {
                 frmLoginVerification frmLoginVerification = new frmLoginVerification();
                 frmLoginVerification.ShowDialog();
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's delete a existing files with " + txtReceivedFrom.Text + "", "Success");
+
                 this.Close();
             }
             else
             {
                 MessageBox.Show("An error occured during deleting of this data, Please try-again thank you.", "Random Files - Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //System logs and actions records.
+                Settings settings = new Settings();
+                settings.systemLogs(Convert.ToInt32(Global.Login_UserID), "Random Documents", "User's delete a existing files with " + txtReceivedFrom.Text + "", "Failed");
             }
         }
 
