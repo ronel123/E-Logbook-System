@@ -1,4 +1,5 @@
-﻿using Log_book_System.Classes.Variable;
+﻿using Log_book_System.Classes.Database;
+using Log_book_System.Classes.Variable;
 using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
 using System;
@@ -14,6 +15,8 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataTable = System.Data.DataTable;
+using Point = System.Drawing.Point;
 
 namespace Log_book_System
 {
@@ -26,7 +29,8 @@ namespace Log_book_System
 
         bool sidebarExpand;
         public static frmDashboard frmDashboardInstance;
-
+        Settings settingsObj = new Settings();
+        DataTable dt = new DataTable();
         private void pbMenu_Click(object sender, EventArgs e)
         {
             tmrSlideBar.Start();
@@ -129,10 +133,11 @@ namespace Log_book_System
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature was not yet added! Wait for the next update.", "Feature not available.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            btnSettings.Enabled = false;
+            //MessageBox.Show("This feature was not yet added! Wait for the next update.", "Feature not available.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //btnSettings.Enabled = false;
+            cmsSettings.Show(btnSettings, new Point(btnSettings.Width - cmsSettings.Width, btnSettings.Height));
         }
-             
+
         private void btnAbout_Click(object sender, EventArgs e)
         {
             frmAbout myForm = new frmAbout();
@@ -166,6 +171,54 @@ namespace Log_book_System
         {
             frmChangeProfile myForm = new frmChangeProfile();
             myForm.ShowDialog();
+        }
+
+        private void anyDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAnyDocument_CR myForm = new frmAnyDocument_CR();
+
+            try
+            {
+                dt = settingsObj.GetRandomFilesData();
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        CrystalReport_AnyDocument crAnyDocuments = new CrystalReport_AnyDocument();
+                        crAnyDocuments.SetDataSource(dt);
+                        myForm.crvAnyDocument.ReportSource = crAnyDocuments;
+
+                        myForm.crvAnyDocument.Refresh();
+                        //myForm.crvAnyDocument.Dispose();
+                    }
+                    myForm.ShowDialog();
+                }
+            }
+            catch { }
+        }
+
+        private void form137ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmForm137_CR myForm = new frmForm137_CR();
+            
+            try
+            {
+                dt = settingsObj.GetForm137Data();
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        CrystalReport_Form137 crAnyDocuments = new CrystalReport_Form137();
+                        crAnyDocuments.SetDataSource(dt);
+                        myForm.crvForm137.ReportSource = crAnyDocuments;
+
+                        myForm.crvForm137.Refresh();                     
+                        //myForm.crvAnyDocument.Dispose();
+                    }
+                    myForm.ShowDialog();
+                }
+            }
+            catch { }
         }
     }
 }

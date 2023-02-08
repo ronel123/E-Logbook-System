@@ -58,6 +58,9 @@
             this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anyDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.form137ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
@@ -344,9 +347,10 @@
             // 
             this.cmsSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseToolStripMenuItem,
+            this.printPreviewToolStripMenuItem,
             this.userAccountsToolStripMenuItem});
             this.cmsSettings.Name = "cmsSettings";
-            this.cmsSettings.Size = new System.Drawing.Size(151, 48);
+            this.cmsSettings.Size = new System.Drawing.Size(151, 70);
             // 
             // databaseToolStripMenuItem
             // 
@@ -355,6 +359,7 @@
             this.exportDatabaseToolStripMenuItem,
             this.importDatabaseToolStripMenuItem,
             this.resetDatabaseToolStripMenuItem});
+            this.databaseToolStripMenuItem.Enabled = false;
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.databaseToolStripMenuItem.Text = "Database";
@@ -398,8 +403,32 @@
             this.resetDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.resetDatabaseToolStripMenuItem.Text = "Reset Database";
             // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anyDocumentsToolStripMenuItem,
+            this.form137ToolStripMenuItem});
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            // 
+            // anyDocumentsToolStripMenuItem
+            // 
+            this.anyDocumentsToolStripMenuItem.Name = "anyDocumentsToolStripMenuItem";
+            this.anyDocumentsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.anyDocumentsToolStripMenuItem.Text = "Any Documents";
+            this.anyDocumentsToolStripMenuItem.Click += new System.EventHandler(this.anyDocumentsToolStripMenuItem_Click);
+            // 
+            // form137ToolStripMenuItem
+            // 
+            this.form137ToolStripMenuItem.Name = "form137ToolStripMenuItem";
+            this.form137ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.form137ToolStripMenuItem.Text = "Form 137/SF10";
+            this.form137ToolStripMenuItem.Click += new System.EventHandler(this.form137ToolStripMenuItem_Click);
+            // 
             // userAccountsToolStripMenuItem
             // 
+            this.userAccountsToolStripMenuItem.Enabled = false;
             this.userAccountsToolStripMenuItem.Name = "userAccountsToolStripMenuItem";
             this.userAccountsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.userAccountsToolStripMenuItem.Text = "User Accounts";
@@ -512,5 +541,8 @@
         private System.Windows.Forms.ToolStripMenuItem importDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anyDocumentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem form137ToolStripMenuItem;
     }
 }
