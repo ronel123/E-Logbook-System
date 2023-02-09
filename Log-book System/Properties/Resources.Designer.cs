@@ -63,6 +63,16 @@ namespace Log_book_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultuser {
+            get {
+                object obj = ResourceManager.GetObject("defaultuser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logbook_loadingscreen {
             get {
                 object obj = ResourceManager.GetObject("logbook-loadingscreen", resourceCulture);

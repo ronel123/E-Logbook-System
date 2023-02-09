@@ -121,6 +121,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CirclePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Database\DBConnection.cs" />
     <Compile Include="Classes\Database\Settings.cs" />
     <Compile Include="Classes\Variable\Global.cs" />
@@ -358,6 +361,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\defaultuser.png" />
     <Content Include="logbook-logo.ico" />
     <Content Include="logo.ico" />
   </ItemGroup>

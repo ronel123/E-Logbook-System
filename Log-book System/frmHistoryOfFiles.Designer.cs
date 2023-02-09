@@ -58,6 +58,7 @@
             this.cmbStoreData = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -190,7 +191,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader13});
             this.lvForm137.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvForm137.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvForm137.FullRowSelect = true;
@@ -343,6 +345,11 @@
             this.label4.Text = "Show data:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Outgoing Remarks";
+            this.columnHeader13.Width = 0;
+            // 
             // frmHistoryOfFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +360,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistoryOfFiles";
             this.Text = "E-Logbook System - Powered by: ITech Digital Solution";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHistoryOfFiles_FormClosing);
             this.Load += new System.EventHandler(this.frmHistoryOfFiles_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -375,7 +383,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView lvForm137;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -392,5 +399,7 @@
         private System.Windows.Forms.ImageList imgList;
         public System.Windows.Forms.ComboBox cmbStoreData;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        public System.Windows.Forms.ListView lvForm137;
     }
 }

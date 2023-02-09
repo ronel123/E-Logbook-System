@@ -29,15 +29,16 @@ namespace Log_book_System.Classes.Variable
         public static MySqlConnection MysqlCon;
 
         /* Login User Info*/
-        public static int Login_UserID = 0;
+        public static int Login_UserID = 1;
         public static string Login_UserRole = "";
 
         /*Selected ID from Data History */
         public static int frmForm137id = 0;
         public static int frmRandomFilesid = 0;
 
-        /* Profile Picture Path */
+        /* Back-up Data Path */
         public static readonly string BACKUPDATABASETABLE_PATH = string.Format("{0}\\Back-up Data\\", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-
+        /* Profile Picture Path */
+        public static readonly string PROFILEPICTURES_PATH = string.Format("{0}\\ProfilePictures\\", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
     }
 }
