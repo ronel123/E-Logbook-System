@@ -35,10 +35,34 @@
   <PropertyGroup>
     <ApplicationIcon>logbook-logo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DocumentFormat.OpenXml, Version=2.19.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.19.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
@@ -80,6 +104,8 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,15 +121,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CirclePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Database\DBConnection.cs" />
     <Compile Include="Classes\Database\Settings.cs" />
     <Compile Include="Classes\Variable\Global.cs" />
     <Compile Include="Classes\Database\Account.cs" />
+    <Compile Include="CrystalReport_AnyDocument.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_AnyDocument.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_Form137.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Form137.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet_for_CrystalReport.cs">
+      <DependentUpon>DataSet_for_CrystalReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_for_CrystalReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_for_CrystalReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnyDocument_CR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnyDocument_CR.Designer.cs">
+      <DependentUpon>frmAnyDocument_CR.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangeProfile.cs">
       <SubType>Form</SubType>
@@ -128,6 +183,12 @@
     </Compile>
     <Compile Include="frmForm137.Designer.cs">
       <DependentUpon>frmForm137.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForm137_CR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForm137_CR.Designer.cs">
+      <DependentUpon>frmForm137_CR.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistoryOfFiles.cs">
       <SubType>Form</SubType>
@@ -173,8 +234,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrystalReport_AnyDocument.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_AnyDocument.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Form137.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Form137.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnyDocument_CR.resx">
+      <DependentUpon>frmAnyDocument_CR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangeProfile.resx">
       <DependentUpon>frmChangeProfile.cs</DependentUpon>
@@ -187,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmForm137.resx">
       <DependentUpon>frmForm137.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForm137_CR.resx">
+      <DependentUpon>frmForm137_CR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoryOfFiles.resx">
       <DependentUpon>frmHistoryOfFiles.cs</DependentUpon>
@@ -219,6 +294,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSet_for_CrystalReport.xsc">
+      <DependentUpon>DataSet_for_CrystalReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_for_CrystalReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_for_CrystalReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_for_CrystalReport.xss">
+      <DependentUpon>DataSet_for_CrystalReport.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -275,8 +361,12 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\defaultuser.png" />
     <Content Include="logbook-logo.ico" />
     <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

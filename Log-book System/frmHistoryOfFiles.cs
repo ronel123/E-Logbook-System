@@ -1,4 +1,5 @@
 ﻿using Log_book_System.Classes.Database;
+using Log_book_System.Classes.Variable;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace Log_book_System
 {
@@ -39,6 +41,37 @@ namespace Log_book_System
             cmbStoreData.ValueMember = "Key";
             cmbStoreData.SelectedIndex = 1;
             LoadRandomFilesData();
+        }
+      
+
+        public static void ListViewToCSV(ListView listView, string filePath, bool includeHidden)
+        {
+            //make header string
+            StringBuilder result = new StringBuilder();
+            WriteCSVRow(result, listView.Columns.Count, i => includeHidden || listView.Columns[i].Width > 0, i => listView.Columns[i].Text);
+
+            //export data rows
+            foreach (ListViewItem listItem in listView.Items)
+                WriteCSVRow(result, listView.Columns.Count, i => includeHidden || listView.Columns[i].Width > 0, i => listItem.SubItems[i].Text);
+
+            File.WriteAllText(filePath, result.ToString());
+        }
+
+        private static void WriteCSVRow(StringBuilder result, int itemsCount, Func<int, bool> isColumnNeeded, Func<int, string> columnValue)
+        {
+            bool isFirstTime = true;
+            for (int i = 0; i < itemsCount; i++)
+            {
+                if (!isColumnNeeded(i))
+                    continue;
+
+                if (!isFirstTime)
+                    result.Append(",");
+                isFirstTime = false;
+
+                result.Append(String.Format("\"{0}\"", columnValue(i)));
+            }
+            result.AppendLine();
         }
 
         private void cmbStoreData_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +110,8 @@ namespace Log_book_System
                             row["name"].ToString(),
                             row["gradelevel"].ToString(),
                             row["previous_school"].ToString(),
-                            row["status"].ToString() }
+                            row["status"].ToString(),
+                            row["outgoing_remarks"].ToString() }
                           ));
                         lvForm137.TopItem = lvForm137.Items.Cast<ListViewItem>().LastOrDefault();
                         //lblCountLogs.Text = "Total of queue history: " + lvHistory.Items.Count.ToString();
@@ -202,7 +236,8 @@ namespace Log_book_System
                             row["name"].ToString(),
                             row["gradelevel"].ToString(),
                             row["previous_school"].ToString(),
-                            row["status"].ToString() }
+                            row["status"].ToString(),
+                            row["outgoing_remarks"].ToString() }
                               ));
                             lvForm137.TopItem = lvForm137.Items.Cast<ListViewItem>().LastOrDefault();
                             //lblCountLogs.Text = "Total of queue history: " + lvHistory.Items.Count.ToString();
@@ -263,7 +298,8 @@ namespace Log_book_System
                             row["name"].ToString(),
                             row["gradelevel"].ToString(),
                             row["previous_school"].ToString(),
-                            row["status"].ToString() }
+                            row["status"].ToString(),
+                            row["outgoing_remarks"].ToString() }
                               ));
                             lvForm137.TopItem = lvForm137.Items.Cast<ListViewItem>().LastOrDefault();
                             //lblCountLogs.Text = "Total of queue history: " + lvHistory.Items.Count.ToString();
@@ -323,7 +359,8 @@ namespace Log_book_System
                             row["name"].ToString(),
                             row["gradelevel"].ToString(),
                             row["previous_school"].ToString(),
-                            row["status"].ToString() }
+                            row["status"].ToString(),
+                            row["outgoing_remarks"].ToString() }
                               ));
                             lvForm137.TopItem = lvForm137.Items.Cast<ListViewItem>().LastOrDefault();
                             //lblCountLogs.Text = "Total of queue history: " + lvHistory.Items.Count.ToString();
@@ -433,6 +470,7 @@ namespace Log_book_System
                 lvRandomFiles.Visible = false;
                 txtFiltername.Text = "";
             }
+            savedataAutomaticallyToCsvFile();
         }
 
         private void lvForm137_Resize(object sender, EventArgs e)
@@ -448,6 +486,23 @@ namespace Log_book_System
         private void SizeLastColumn(System.Windows.Forms.ListView lv)
         {
             lv.Columns[lv.Columns.Count - 1].Width = -2;
+        }
+
+        public void savedataAutomaticallyToCsvFile()
+        {
+            try
+            {
+                ListViewToCSV(lvForm137, Global.BACKUPDATABASETABLE_PATH + "Form137.csv", true);
+                ListViewToCSV(lvRandomFiles, Global.BACKUPDATABASETABLE_PATH + "Random Documents.csv", true);
+            }
+            catch 
+            {
+                MessageBox.Show("Notice: \nYour data was not changed or check to the history. But your last data will be automatically saved. If you want to check the file, go to application directory folder..\n\nThank you.. ", "Back-up Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void frmHistoryOfFiles_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            savedataAutomaticallyToCsvFile();
         }
     }
 }

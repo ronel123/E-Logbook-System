@@ -67,7 +67,7 @@ namespace Log_book_System.Classes.Database
             settingsTable = new DataTable();
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status FROM form137file_tbl ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status, outgoing_remarks FROM form137file_tbl ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -81,7 +81,7 @@ namespace Log_book_System.Classes.Database
             settingsTable = new DataTable();
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -223,7 +223,7 @@ namespace Log_book_System.Classes.Database
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
 
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl WHERE date_format(created, '%M %e %Y %r') LIKE @name OR typeofdocuments LIKE @name  OR receivedby LIKE @name OR remarks LIKE @name OR status LIKE @name ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl WHERE date_format(created, '%m-%e-%y %r') LIKE @name OR typeofdocuments LIKE @name  OR receivedby LIKE @name OR remarks LIKE @name OR status LIKE @name ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -240,7 +240,7 @@ namespace Log_book_System.Classes.Database
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
 
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status FROM form137file_tbl WHERE date_format(created, '%M %e %Y %r') LIKE @name1 OR CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) LIKE @name1 OR gradelevel LIKE @name1 OR previous_school LIKE @name1 OR status LIKE @name1 ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status, outgoing_remarks FROM form137file_tbl WHERE date_format(created, '%m-%e-%y %r') LIKE @name1 OR CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) LIKE @name1 OR gradelevel LIKE @name1 OR previous_school LIKE @name1 OR status LIKE @name1 ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -257,7 +257,7 @@ namespace Log_book_System.Classes.Database
             mysqlCmd.Parameters.Clear();
 
             //mysqlCmd.CommandText = "SELECT q.processed_date, t.transaction_name, CONCAT(e.last_name, \", \", e.first_name) as employeeLastName, CASE WHEN q.queue_by = 0 THEN \"Guest\" ELSE CONCAT(s.last_name, \", \", s.first_name) END AS Name FROM queue q LEFT JOIN student s ON s.student_number = q.queue_by LEFT JOIN employee e ON e.employee_id = q.processed_by LEFT JOIN transaction_modes t ON t.transaction_id = q.transaction_id WHERE q.processed_date BETWEEN @datefrom AND @dateto ORDER by q.processed_date;";
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl WHERE created BETWEEN @datefrom AND @dateto ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, typeofdocuments, receivedby, remarks, UPPER(status) AS status FROM randomfile_tbl WHERE created BETWEEN @datefrom AND @dateto ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -276,7 +276,7 @@ namespace Log_book_System.Classes.Database
             mysqlCmd.Parameters.Clear();
 
             //mysqlCmd.CommandText = "SELECT q.processed_date, t.transaction_name, CONCAT(e.last_name, \", \", e.first_name) as employeeLastName, CASE WHEN q.queue_by = 0 THEN \"Guest\" ELSE CONCAT(s.last_name, \", \", s.first_name) END AS Name FROM queue q LEFT JOIN student s ON s.student_number = q.queue_by LEFT JOIN employee e ON e.employee_id = q.processed_by LEFT JOIN transaction_modes t ON t.transaction_id = q.transaction_id WHERE q.processed_date BETWEEN @datefrom AND @dateto ORDER by q.processed_date;";
-            mysqlCmd.CommandText = "SELECT id, date_format(created, '%M %e %Y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status FROM form137file_tbl WHERE created BETWEEN @datefrom AND @dateto ORDER BY id ASC;";
+            mysqlCmd.CommandText = "SELECT id, date_format(created, '%m-%e-%y %r') as created, CONCAT(last_name, \", \", first_name, \" \", SUBSTRING(middle_name, 1, 1)) as name, UPPER(gradelevel) AS gradelevel, previous_school, UPPER(status) AS status, outgoing_remarks FROM form137file_tbl WHERE created BETWEEN @datefrom AND @dateto ORDER BY id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -319,7 +319,7 @@ namespace Log_book_System.Classes.Database
             settingsTable = new DataTable();
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
-            mysqlCmd.CommandText = "SELECT h.id, date_format(h.timestamp, '%M %e %Y %r') as timestamp, CASE WHEN h.user_id = 0 THEN 'N/A' ELSE CONCAT(e.last_name, \", \", e.first_name) END AS name, h.action, h.description, h.status FROM system_logs h LEFT JOIN user_information e ON e.user_id = h.user_id ORDER BY h.id ASC;";
+            mysqlCmd.CommandText = "SELECT h.id, date_format(h.timestamp, '%m-%e-%y %r') as timestamp, CASE WHEN h.user_id = 0 THEN 'N/A' ELSE CONCAT(e.last_name, \", \", e.first_name) END AS name, h.action, h.description, h.status FROM system_logs h LEFT JOIN user_information e ON e.user_id = h.user_id ORDER BY h.id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 
@@ -353,7 +353,7 @@ namespace Log_book_System.Classes.Database
             Global.MysqlCon.Open();
             mysqlCmd.Parameters.Clear();
 
-            mysqlCmd.CommandText = "SELECT h.id, date_format(h.timestamp, '%M %e %Y %r') as timestamp, CASE WHEN h.user_id = 0 THEN 'N/A' ELSE CONCAT(e.last_name, \", \", e.first_name) END AS name, h.action, h.description, h.status FROM system_logs h LEFT JOIN user_information e ON e.user_id = h.user_id WHERE date_format(h.timestamp, '%M %e %Y %r') LIKE @date ORDER BY h.id ASC;";
+            mysqlCmd.CommandText = "SELECT h.id, date_format(h.timestamp, '%m-%e-%y %r') as timestamp, CASE WHEN h.user_id = 0 THEN 'N/A' ELSE CONCAT(e.last_name, \", \", e.first_name) END AS name, h.action, h.description, h.status FROM system_logs h LEFT JOIN user_information e ON e.user_id = h.user_id WHERE date_format(h.timestamp, '%m-%e-%y %r') LIKE @date ORDER BY h.id ASC;";
             mysqlCmd.CommandType = CommandType.Text;
             mysqlCmd.Connection = Global.MysqlCon;
 

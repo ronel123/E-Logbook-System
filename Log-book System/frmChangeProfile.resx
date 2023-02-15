@@ -118,6 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblChangeProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAKVJREFUOE/t
+        zzEKwjAAheE4WkGFegDxFoJepmN3cRERZw/gYXQU0UWv0JPU/1EDIXRIE5AO/vBBSeGRmD41wrr5TG+G
+        N2qcMUBSBTRmnRDVFPPm0+zhji7RKY09UWGhAzpCY3cMdRCaxh6wt3FHS+h/cBO4Y+6ofX5wOV7wx+SC
+        DMH9bOyK/1h7O7SN3TBG5w7wx6JuZvMHk8bUCtuvDaKe2feM+QCQSFI/dKix+QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pbWrong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAsNJREFUWEft

@@ -35,9 +35,9 @@
             this.btnForm137 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlProfile = new System.Windows.Forms.Panel();
+            this.pbProfile = new Log_book_System.CirclePictureBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.pbProfile = new System.Windows.Forms.PictureBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -58,6 +58,9 @@
             this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anyDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.form137ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
@@ -66,7 +69,7 @@
             this.pnlSidebar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.pnlProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             this.panel11.SuspendLayout();
@@ -83,7 +86,8 @@
             this.pnlSidebar.BackColor = System.Drawing.Color.Maroon;
             this.pnlSidebar.Controls.Add(this.panel2);
             this.pnlSidebar.Controls.Add(this.panel1);
-            this.pnlSidebar.Controls.Add(this.panel10);
+            this.pnlSidebar.Controls.Add(this.pnlProfile);
+            this.pnlSidebar.Controls.Add(this.pbMenu);
             this.pnlSidebar.Controls.Add(this.panel11);
             this.pnlSidebar.Controls.Add(this.panel12);
             this.pnlSidebar.Controls.Add(this.panel14);
@@ -101,7 +105,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnForm137);
-            this.panel2.Location = new System.Drawing.Point(3, 304);
+            this.panel2.Location = new System.Drawing.Point(3, 323);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 40);
             this.panel2.TabIndex = 14;
@@ -149,17 +153,27 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel10
+            // pnlProfile
             // 
-            this.panel10.Controls.Add(this.lblName);
-            this.panel10.Controls.Add(this.pbProfile);
-            this.panel10.Controls.Add(this.lblRole);
-            this.panel10.Controls.Add(this.pbMenu);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(271, 206);
-            this.panel10.TabIndex = 9;
+            this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProfile.Controls.Add(this.pbProfile);
+            this.pnlProfile.Controls.Add(this.lblName);
+            this.pnlProfile.Controls.Add(this.lblRole);
+            this.pnlProfile.Location = new System.Drawing.Point(0, 42);
+            this.pnlProfile.Name = "pnlProfile";
+            this.pnlProfile.Size = new System.Drawing.Size(271, 183);
+            this.pnlProfile.TabIndex = 9;
+            // 
+            // pbProfile
+            // 
+            this.pbProfile.Image = ((System.Drawing.Image)(resources.GetObject("pbProfile.Image")));
+            this.pbProfile.Location = new System.Drawing.Point(71, 3);
+            this.pbProfile.Name = "pbProfile";
+            this.pbProfile.Size = new System.Drawing.Size(125, 125);
+            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfile.TabIndex = 0;
+            this.pbProfile.TabStop = false;
             // 
             // lblName
             // 
@@ -169,7 +183,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Image = ((System.Drawing.Image)(resources.GetObject("lblName.Image")));
             this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblName.Location = new System.Drawing.Point(0, 148);
+            this.lblName.Location = new System.Drawing.Point(0, 125);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(271, 31);
             this.lblName.TabIndex = 3;
@@ -177,22 +191,12 @@
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
-            // pbProfile
-            // 
-            this.pbProfile.Image = ((System.Drawing.Image)(resources.GetObject("pbProfile.Image")));
-            this.pbProfile.Location = new System.Drawing.Point(87, 52);
-            this.pbProfile.Name = "pbProfile";
-            this.pbProfile.Size = new System.Drawing.Size(100, 100);
-            this.pbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbProfile.TabIndex = 0;
-            this.pbProfile.TabStop = false;
-            // 
             // lblRole
             // 
             this.lblRole.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblRole.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.Color.White;
-            this.lblRole.Location = new System.Drawing.Point(0, 179);
+            this.lblRole.Location = new System.Drawing.Point(0, 156);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(271, 27);
             this.lblRole.TabIndex = 2;
@@ -206,7 +210,7 @@
             this.pbMenu.ErrorImage = null;
             this.pbMenu.Image = ((System.Drawing.Image)(resources.GetObject("pbMenu.Image")));
             this.pbMenu.InitialImage = null;
-            this.pbMenu.Location = new System.Drawing.Point(7, 8);
+            this.pbMenu.Location = new System.Drawing.Point(6, 6);
             this.pbMenu.Name = "pbMenu";
             this.pbMenu.Size = new System.Drawing.Size(35, 35);
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,7 +221,7 @@
             // panel11
             // 
             this.panel11.Controls.Add(this.btnHome);
-            this.panel11.Location = new System.Drawing.Point(4, 212);
+            this.panel11.Location = new System.Drawing.Point(4, 231);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(271, 40);
             this.panel11.TabIndex = 10;
@@ -242,7 +246,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.btnRandomFiles);
-            this.panel12.Location = new System.Drawing.Point(4, 258);
+            this.panel12.Location = new System.Drawing.Point(4, 277);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(271, 40);
             this.panel12.TabIndex = 11;
@@ -267,7 +271,7 @@
             // panel14
             // 
             this.panel14.Controls.Add(this.btnHistory);
-            this.panel14.Location = new System.Drawing.Point(4, 350);
+            this.panel14.Location = new System.Drawing.Point(4, 369);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(271, 40);
             this.panel14.TabIndex = 13;
@@ -292,7 +296,7 @@
             // panel15
             // 
             this.panel15.Controls.Add(this.btnSystemLogs);
-            this.panel15.Location = new System.Drawing.Point(4, 396);
+            this.panel15.Location = new System.Drawing.Point(4, 415);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(271, 40);
             this.panel15.TabIndex = 14;
@@ -317,7 +321,7 @@
             // panel16
             // 
             this.panel16.Controls.Add(this.btnSettings);
-            this.panel16.Location = new System.Drawing.Point(4, 442);
+            this.panel16.Location = new System.Drawing.Point(4, 461);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(271, 40);
             this.panel16.TabIndex = 15;
@@ -344,9 +348,10 @@
             // 
             this.cmsSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseToolStripMenuItem,
+            this.printPreviewToolStripMenuItem,
             this.userAccountsToolStripMenuItem});
             this.cmsSettings.Name = "cmsSettings";
-            this.cmsSettings.Size = new System.Drawing.Size(151, 48);
+            this.cmsSettings.Size = new System.Drawing.Size(151, 70);
             // 
             // databaseToolStripMenuItem
             // 
@@ -355,6 +360,7 @@
             this.exportDatabaseToolStripMenuItem,
             this.importDatabaseToolStripMenuItem,
             this.resetDatabaseToolStripMenuItem});
+            this.databaseToolStripMenuItem.Enabled = false;
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
             this.databaseToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.databaseToolStripMenuItem.Text = "Database";
@@ -398,8 +404,32 @@
             this.resetDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.resetDatabaseToolStripMenuItem.Text = "Reset Database";
             // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anyDocumentsToolStripMenuItem,
+            this.form137ToolStripMenuItem});
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            // 
+            // anyDocumentsToolStripMenuItem
+            // 
+            this.anyDocumentsToolStripMenuItem.Name = "anyDocumentsToolStripMenuItem";
+            this.anyDocumentsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.anyDocumentsToolStripMenuItem.Text = "Any Documents";
+            this.anyDocumentsToolStripMenuItem.Click += new System.EventHandler(this.anyDocumentsToolStripMenuItem_Click);
+            // 
+            // form137ToolStripMenuItem
+            // 
+            this.form137ToolStripMenuItem.Name = "form137ToolStripMenuItem";
+            this.form137ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.form137ToolStripMenuItem.Text = "Form 137/SF10";
+            this.form137ToolStripMenuItem.Click += new System.EventHandler(this.form137ToolStripMenuItem_Click);
+            // 
             // userAccountsToolStripMenuItem
             // 
+            this.userAccountsToolStripMenuItem.Enabled = false;
             this.userAccountsToolStripMenuItem.Name = "userAccountsToolStripMenuItem";
             this.userAccountsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.userAccountsToolStripMenuItem.Text = "User Accounts";
@@ -407,7 +437,7 @@
             // panel17
             // 
             this.panel17.Controls.Add(this.btnAbout);
-            this.panel17.Location = new System.Drawing.Point(4, 488);
+            this.panel17.Location = new System.Drawing.Point(4, 507);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(271, 40);
             this.panel17.TabIndex = 16;
@@ -462,8 +492,7 @@
             this.pnlSidebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.pnlProfile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             this.panel11.ResumeLayout(false);
@@ -484,9 +513,8 @@
         private System.Windows.Forms.Button btnForm137;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlProfile;
         public System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.PictureBox pbProfile;
         public System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.PictureBox pbMenu;
         private System.Windows.Forms.Panel panel11;
@@ -512,5 +540,9 @@
         private System.Windows.Forms.ToolStripMenuItem importDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anyDocumentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem form137ToolStripMenuItem;
+        public CirclePictureBox pbProfile;
     }
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_for_CrystalReport" targetNamespace="http://tempuri.org/DataSet_for_CrystalReport.xsd" xmlns:mstns="http://tempuri.org/DataSet_for_CrystalReport.xsd" xmlns="http://tempuri.org/DataSet_for_CrystalReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_for_CrystalReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_for_CrystalReport" msprop:Generator_DataSetName="DataSet_for_CrystalReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable_form137" msprop:Generator_RowEvHandlerName="DataTable_form137RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable_form137RowDeleted" msprop:Generator_RowDeletingName="DataTable_form137RowDeleting" msprop:Generator_RowEvArgName="DataTable_form137RowChangeEvent" msprop:Generator_TablePropName="DataTable_form137" msprop:Generator_RowChangedName="DataTable_form137RowChanged" msprop:Generator_RowChangingName="DataTable_form137RowChanging" msprop:Generator_TableClassName="DataTable_form137DataTable" msprop:Generator_RowClassName="DataTable_form137Row" msprop:Generator_TableVarName="tableDataTable_form137" msprop:Generator_UserTableName="DataTable_form137">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="created" msprop:Generator_ColumnPropNameInRow="created" msprop:Generator_ColumnPropNameInTable="createdColumn" msprop:Generator_ColumnVarNameInTable="columncreated" msprop:Generator_UserColumnName="created" type="xs:string" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="gradelevel" msprop:Generator_ColumnPropNameInRow="gradelevel" msprop:Generator_ColumnPropNameInTable="gradelevelColumn" msprop:Generator_ColumnVarNameInTable="columngradelevel" msprop:Generator_UserColumnName="gradelevel" type="xs:string" minOccurs="0" />
+              <xs:element name="previous_school" msprop:Generator_ColumnPropNameInRow="previous_school" msprop:Generator_ColumnPropNameInTable="previous_schoolColumn" msprop:Generator_ColumnVarNameInTable="columnprevious_school" msprop:Generator_UserColumnName="previous_school" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable_randomdocu" msprop:Generator_RowEvHandlerName="DataTable_randomdocuRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable_randomdocuRowDeleted" msprop:Generator_RowDeletingName="DataTable_randomdocuRowDeleting" msprop:Generator_RowEvArgName="DataTable_randomdocuRowChangeEvent" msprop:Generator_TablePropName="DataTable_randomdocu" msprop:Generator_RowChangedName="DataTable_randomdocuRowChanged" msprop:Generator_RowChangingName="DataTable_randomdocuRowChanging" msprop:Generator_TableClassName="DataTable_randomdocuDataTable" msprop:Generator_RowClassName="DataTable_randomdocuRow" msprop:Generator_TableVarName="tableDataTable_randomdocu" msprop:Generator_UserTableName="DataTable_randomdocu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="created" msprop:Generator_ColumnPropNameInRow="created" msprop:Generator_ColumnPropNameInTable="createdColumn" msprop:Generator_ColumnVarNameInTable="columncreated" msprop:Generator_UserColumnName="created" type="xs:string" minOccurs="0" />
+              <xs:element name="typeofdocuments" msprop:Generator_ColumnPropNameInRow="typeofdocuments" msprop:Generator_ColumnPropNameInTable="typeofdocumentsColumn" msprop:Generator_ColumnVarNameInTable="columntypeofdocuments" msprop:Generator_UserColumnName="typeofdocuments" type="xs:string" minOccurs="0" />
+              <xs:element name="receivedby" msprop:Generator_ColumnPropNameInRow="receivedby" msprop:Generator_ColumnPropNameInTable="receivedbyColumn" msprop:Generator_ColumnVarNameInTable="columnreceivedby" msprop:Generator_UserColumnName="receivedby" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
