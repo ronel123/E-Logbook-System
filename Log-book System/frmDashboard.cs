@@ -152,7 +152,7 @@ namespace Log_book_System
         }
         public Bitmap LoadBitmap()
         {
-            string tempStr = string.Format("{0}{1}.jpg", Global.PROFILEPICTURES_PATH, Global.Login_UserID);
+            string tempStr = string.Format("{0}{1}.Jpg", Global.PROFILEPICTURES_PATH, Global.Login_UserID);
             if (File.Exists(tempStr))
             {
                 // open file in read only mode

@@ -16,7 +16,7 @@ namespace Log_book_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDashboard());
+            Application.Run(new frmSplashScreen());
         }
     }
 }
